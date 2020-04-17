@@ -5,3 +5,4 @@ test-context.js
 
 # build
 rollup.config.js
+babel.config.js
