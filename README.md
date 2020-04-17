@@ -10,8 +10,6 @@
 ### @themost/xml
 MOST Web Framework 2.0 **Codename Blueshift** Xml
 
-The sources for this package are in the main [MOST Web Framework](http://github.com/kbarbounakis/themost) repo.
-
 License: [BSD-3-Clause](https://github.com/kbarbounakis/themost/blob/master/LICENSE)
 
 #### Usage
@@ -19,5 +17,11 @@ License: [BSD-3-Clause](https://github.com/kbarbounakis/themost/blob/master/LICE
 Install @themost/xml:
 
     npm i @themost/xml
+
+#### Development
+
+This repo is a submodule of [MOST Web Framework](http://github.com/themost-framework/themost)
+
+    git clone http://github.com/themost-framework/themost.git
 
 
