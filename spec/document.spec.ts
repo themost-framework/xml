@@ -1,4 +1,4 @@
-import {XDocument, XNode} from "../src/index";
+import {XDocument, XNode} from "@themost/xml";
 
 const BREAKFAST_MENU_XML = `
 <?xml version="1.0" encoding="UTF-8"?>
