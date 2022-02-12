@@ -1,7 +1,7 @@
 {
   "name": "@themost/xml",
   "version": "2.5.2",
-  "description": "MOST Web Framework Codename Blueshift xml module",
+  "description": "MOST Web Framework XML and XSLT library",
   "main": "dist/themost_xml.js",
   "types": "dist/themost_xml.d.ts",
   "peerDependencies": {},
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/themost-framework/themost.git"
+    "url": "git+https://github.com/themost-framework/xml.git"
   },
   "author": "Kyriakos Barbounakis <k.barbounakis@gmail.com>",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/themost-framework/themost/issues"
+    "url": "https://github.com/themost-framework/xml/issues"
   },
-  "homepage": "https://github.com/themost-framework/themost#readme",
+  "homepage": "https://github.com/themost-framework/xml#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/jasmine": "^3.5.0",
