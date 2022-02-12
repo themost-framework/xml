@@ -1,6 +1,6 @@
 {
   "name": "@themost/xml",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "MOST Web Framework Codename Blueshift xml module",
   "main": "dist/themost_xml.js",
   "types": "dist/themost_xml.d.ts",
