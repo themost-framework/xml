@@ -31,7 +31,7 @@ module.exports = function (config) {
         //list of browsers to launch and capture
         browsers: ['ChromeHeadlessNoSandbox'/*,'PhantomJS','Firefox','Edge','ChromeCanary','Opera','IE','Safari'*/],
         //list of reporters to use
-        reporters: ['kjhtml', 'mocha' /*'mocha', 'kjhtml','dots','progress','spec'*/],
+        reporters: ['kjhtml', 'spec' /*'mocha', 'kjhtml','dots','progress','spec'*/],
 
         //address that the server will listen on, '0.0.0.0' is default
         listenAddress: '127.0.0.1',
@@ -65,8 +65,8 @@ module.exports = function (config) {
         plugins: [
             require('karma-jasmine'),
             require('karma-webpack'),
+            require('karma-spec-reporter'),
             require('karma-jasmine-html-reporter'),
-            require('karma-mocha-reporter'),
             require('karma-chrome-launcher')
         ],
         /* karma-webpack config
