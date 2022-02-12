@@ -1,11 +1,11 @@
 {
   "spec_dir": "spec",
   "spec_files": [
-    "**/*[sS]pec.ts"
+    "**/*[sS]pec.js"
   ],
   "helpers": [
     "helpers/env.js",
-    "helpers/typescript.js",
+    "helpers/babel.js",
     "helpers/reporter.js"
   ],
   "stopSpecOnExpectationFailure": false,
