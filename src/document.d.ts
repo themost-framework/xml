@@ -39,26 +39,26 @@ export declare class XSerializer {
 export declare class XNode {
     constructor(type: string, name: string, opt_value?: any, opt_owner?: any);
     nodeName: string;
-    appendChild(node: XNode);
-    replaceChild(newNode: XNode, oldNode: XNode);
-    insertBefore(newNode: XNode, oldNode: XNode);
-    prependChild(newNode: XNode);
-    removeChild(node: XNode);
+    appendChild(node: XNode): void;
+    replaceChild(newNode: XNode, oldNode: XNode): void;
+    insertBefore(newNode: XNode, oldNode: XNode): void;
+    prependChild(newNode: XNode): void;
+    removeChild(node: XNode): void;
     hasAttributes(): boolean;
     hasAttribute(name: string): boolean;
-    setAttribute(name: string, value: any);
+    setAttribute(name: string, value: any): void;
     getAttribute(name: string): string;
-    removeAttribute(name: string);
+    removeAttribute(name: string): void;
     getElementsByTagName(name: string):Array<XNode>;
     getElementById(id: string): XNode;
     value(): any;
     hasChildNodes(): boolean;
-    innerText(s: string);
-    innerXML(xml: string);
+    innerText(s?: string): void | string;
+    innerXML(): void | string;
     outerXML(): string;
     selectNodes(expr: string, ns?:Array<XNamespace>):Array<XNode>;
     selectSingleNode(expr: string, ns?:Array<XNamespace>):XNode;
-    removeAll();
+    removeAll(): void;
     name(): string;
     lookupPrefix(namespaceURI: string): string;
 
