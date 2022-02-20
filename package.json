@@ -4,11 +4,10 @@
   "description": "MOST Web Framework XML and XSLT library",
   "main": "dist/themost_xml.js",
   "types": "dist/themost_xml.d.ts",
-  "peerDependencies": {},
   "scripts": {
     "build": "rollup -c ./rollup.config.js -m",
-    "test:node": "jasmine",
-    "test": "karma start"
+    "test": "jasmine",
+    "test:browser": "karma start"
   },
   "repository": {
     "type": "git",
@@ -20,12 +19,13 @@
     "url": "https://github.com/themost-framework/xml/issues"
   },
   "homepage": "https://github.com/themost-framework/xml#readme",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.17.2",
+    "@babel/plugin-proposal-decorators": "^7.17.2",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.0",
     "@types/jasmine": "^3.5.0",
+    "@types/xmldom": "^0.1.31",
     "ansi-regex": "^5.0.1",
     "babel-loader": "^8.2.3",
     "jasmine": "^4.0.2",
@@ -43,5 +43,8 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "typescript": "^4.5.5",
     "webpack": "^5.68.0"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "^0.8.1"
   }
 }
