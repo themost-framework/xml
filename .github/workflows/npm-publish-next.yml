@@ -14,7 +14,7 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm run test:node
+      - run: npm run test
       - run: npm run build
       - run: npm unpublish @themost/xml@next
       - run: npm publish --tag next --access=public
