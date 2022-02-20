@@ -16,7 +16,7 @@ function XmlElement(elementName, namespace) {
         const key1 = elementName || key;
         target.constructor.serialization.properties.push(
             [
-                key1,
+                key,
                 new XmlElementAttribute(key1, namespace)
             ]
         )

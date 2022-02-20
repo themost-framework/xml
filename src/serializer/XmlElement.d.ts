@@ -1,4 +1,5 @@
 export declare class XmlElementAttribute {
+    constructor(elementName: string, namespace?: string);
     elementName: string;
     namespace?: string;
 }

@@ -5,6 +5,7 @@ export declare interface XmlRootAnnotation extends XmlSerialization {
 }
 
 export declare class XmlRootAttribute {
+    constructor(elementName: string, namespace?: string);
     elementName: string;
     namespace?: string;
 }

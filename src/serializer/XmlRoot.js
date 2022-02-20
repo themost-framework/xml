@@ -17,7 +17,7 @@ function XmlRoot(elementName, namespace) {
         }
         XmlSerializable()(target);
         Object.assign(target.serialization, {
-            root: new XmlRootAttribute(elementName, namespace)
+            root: new XmlRootAttribute(elementName || target.name, namespace)
         });
     };
 }

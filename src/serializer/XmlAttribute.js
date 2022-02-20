@@ -16,7 +16,7 @@ function XmlAttribute(attributeName, namespace) {
         const key1 = attributeName || key;
         target.constructor.serialization.properties.push(
             [
-                key1,
+                key,
                 new XmlAttributeAttribute(key1, namespace)
             ]
         )
