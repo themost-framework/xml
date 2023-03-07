@@ -10,3 +10,9 @@ tsconfig.json
 
 # github
 .github
+
+# gitpod
+.gitpod.yml
+
+# typescript
+tsconfig.json
