@@ -143,16 +143,15 @@
         XML10_COMBINING_CHAR + XML10_EXTENDER + '-';
     var XML_NC_NAME = '[' + XML10_LETTER + '_][' + XML_NC_NAME_CHAR + ']*';
 
-    if (typeof exports !== 'undefined')
-    {
-        module.exports.XML10_VERSION_INFO = XML10_VERSION_INFO;
-        module.exports.XML10_NAME = XML10_NAME;
-        module.exports.XML10_ATTRIBUTE = XML10_ATTRIBUTE;
-        module.exports.XML11_VERSION_INFO = XML11_VERSION_INFO;
-        module.exports.XML11_NAME = XML11_NAME;
-        module.exports.XML11_ATTRIBUTE = XML11_ATTRIBUTE;
-        module.exports.XML_NC_NAME = XML_NC_NAME;
-    }
+module.exports = {
+    XML10_VERSION_INFO,
+    XML10_NAME,
+    XML10_ATTRIBUTE,
+    XML11_VERSION_INFO,
+    XML11_NAME,
+    XML11_ATTRIBUTE,
+    XML_NC_NAME
+};
 
 
 

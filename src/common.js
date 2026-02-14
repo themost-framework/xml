@@ -203,7 +203,5 @@ XmlCommon.prototype.escapeTags = function (s) {
 
 var xmlCommon = new XmlCommon();
 
-if (typeof exports !== 'undefined') {
-    module.exports = xmlCommon;
-}
+module.exports = xmlCommon;
 

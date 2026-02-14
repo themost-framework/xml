@@ -1,8 +1,13 @@
 {
   "compilerOptions": {
-    "noImplicitAny": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true
+    "baseUrl": ".",
+    "target": "ES5",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "paths": {
+      "@themost/xml": [
+        "./"
+      ]
+    }
   }
 }

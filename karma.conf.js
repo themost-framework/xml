@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = function (config) {
     config.set({
         //root path location to resolve paths defined in files and exclude
@@ -6,15 +7,7 @@ module.exports = function (config) {
         exclude: [],
         //files/patterns to load in the browser
         files: [
-            {pattern: 'test-context.js', watched: false}
-            /*parameters:
-                watched: if autoWatch is true all files that have set watched to true will be watched for changes
-                served: should the files be served by Karma's webserver?
-                included: should the files be included in the browser using <script> tag?
-                nocache: should the files be served from disk on each request by Karma's webserver? */
-            /*assets:
-                {pattern: '*.html', watched:true, served:true, included:false}
-                {pattern: 'images/*', watched:false, served:true, included:false} */
+            {pattern: "spec/**/*.ts"}
         ],
 
         //executes the tests whenever one of watched files changes
@@ -27,7 +20,7 @@ module.exports = function (config) {
         logLevel: config.LOG_WARN, //config.LOG_DISABLE, config.LOG_ERROR, config.LOG_INFO, config.LOG_DEBUG
 
         //list of frameworks you want to use, only jasmine is installed with this boilerplate
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'karma-typescript'],
         //list of browsers to launch and capture
         browsers: ['ChromeHeadlessNoSandbox'/*,'PhantomJS','Firefox','Edge','ChromeCanary','Opera','IE','Safari'*/],
         //list of reporters to use
@@ -52,7 +45,7 @@ module.exports = function (config) {
             //capture all console output and pipe it to the terminal, true is default
             captureConsole: false,
             //if true, Karma clears the context window upon the completion of running the tests, true is default
-            clearContext: false,
+            clearContext: true,
             //run the tests on the same window as the client, without using iframe or a new window, false is default
             runInParent: false,
             //true: runs the tests inside an iFrame; false: runs the tests in a new window, true is default
@@ -64,39 +57,26 @@ module.exports = function (config) {
         },
         plugins: [
             require('karma-jasmine'),
-            require('karma-webpack'),
+            require("karma-typescript"),
             require('karma-spec-reporter'),
             require('karma-jasmine-html-reporter'),
             require('karma-chrome-launcher')
         ],
-        /* karma-webpack config
-           pass your webpack configuration for karma
-           add `babel-loader` to the webpack configuration to make
-           the ES6+ code in the test files readable to the browser
-           eg. import, export keywords */
-        webpack: {
-            optimization: {
-                minimize: false
-            },
-            devtool: 'inline-source-map',
-            module: {
-                rules: [
-                    {
-                        test: /\.js$/i,
-                        exclude: /(node_modules)/,
-                        loader: 'babel-loader'
-                    }
-                ]
-            }
-        },
         preprocessors: {
-            //add webpack as preprocessor to support require() in test-suits .js files
-            'test-context.js': ['webpack']
+            "**/*.ts": "karma-typescript" // *.tsx for React Jsx
         },
-        webpackMiddleware: {
-            //turn off webpack bash output when run the tests
-            noInfo: false,
-            stats: 'errors-only'
+        karmaTypescriptConfig: {
+            tsconfig: "./tsconfig.spec.json",
+            bundlerOptions: {
+                transforms: [
+                    require('karma-typescript-es6-transform')()
+                ],
+                resolve: {
+                    alias: {
+                        "@themost/xml": path.resolve(__dirname, './dist/index.js'),
+                    }
+                }
+            }
         },
         customLaunchers: {
             ChromeNoSandbox: {
