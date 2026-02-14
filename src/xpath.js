@@ -2517,34 +2517,30 @@ function xpathEval(select, context, ns) {
     return expr.evaluate(context);
 }
 
-if (typeof exports !== 'undefined')
-{
-    module.exports.evaluate = xpathEval;
-    module.exports.select = xpathDomEval;
-    module.exports.BinaryExpr = BinaryExpr;
-    module.exports.ExprContext = ExprContext;
-    /**
-     * @param {XNode} node
-     * @returns {ExprContext}
-     */
-    module.exports.createContext = function (node) {
+
+module.exports = {
+    evaluate: xpathEval,
+    select: xpathDomEval,
+    BinaryExpr,
+    ExprContext,
+    createContext: function (node) {
         return new ExprContext(node)
-    };
-    module.exports.BooleanValue = BooleanValue;
-    module.exports.FilterExpr = FilterExpr;
-    module.exports.LiteralExpr = LiteralExpr;
-    module.exports.LocationExpr = LocationExpr;
-    module.exports.NodeSetValue = NodeSetValue;
-    module.exports.NodeTestAny = NodeTestAny;
-    module.exports.NodeTestComment = NodeTestComment;
-    module.exports.NodeTestElementOrAttribute = NodeTestElementOrAttribute;
-    module.exports.NodeTestName = NodeTestName;
-    module.exports.NodeTestNC = NodeTestNC;
-    module.exports.NodeTestPI = NodeTestPI;
-    module.exports.NodeTestText = NodeTestText;
-    module.exports.NumberExpr = NumberExpr;
-    module.exports.NumberValue = NumberValue;
-    module.exports.PathExpr = PathExpr;
-    module.exports.PredicateExpr = PredicateExpr;
-    module.exports.StepExpr = StepExpr;
-}
+    },
+    BooleanValue,
+    FilterExpr,
+    LiteralExpr,
+    LocationExpr,
+    NodeSetValue,
+    NodeTestAny,
+    NodeTestComment,
+    NodeTestElementOrAttribute,
+    NodeTestName,
+    NodeTestNC,
+    NodeTestPI,
+    NodeTestText,
+    NumberExpr,
+    NumberValue,
+    PathExpr,
+    PredicateExpr,
+    StepExpr
+};

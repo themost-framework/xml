@@ -5,11 +5,13 @@
  * Use of this source code is governed by an BSD-3-Clause license that can be
  * found in the LICENSE file at https://themost.io/license
  */
-var _document = require('./document');
+var { XDocument, XNamespace, XNode, XNodeType, XSerializer } = require('./document');
 
-module.exports.XDocument = _document.XDocument;
-module.exports.XNode = _document.XNode;
-module.exports.XNamespace = _document.XNamespace;
-module.exports.XSerializer = _document.XSerializer;
-module.exports.XNodeType = _document.XNodeType;
+module.exports = {
+    XDocument,
+    XNode,
+    XNamespace,
+    XSerializer,
+    XNodeType
+}
 

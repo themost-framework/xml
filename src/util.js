@@ -284,7 +284,5 @@ XmlUtil.prototype.xmlEscapeTags = function (s) {
 
 var xmlUtil = new XmlUtil();
 
-if (typeof exports !== 'undefined') {
-    module.exports = xmlUtil;
-}
+module.exports = xmlUtil;
 

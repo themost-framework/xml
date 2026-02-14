@@ -1,36 +1,35 @@
-var rollupResolve = require('rollup-plugin-node-resolve');
-var rollupCommon = require('rollup-plugin-commonjs');
-var autoExternal = require('rollup-plugin-auto-external');
-var dts = require('rollup-plugin-dts').default;
-
-var dist = './dist/';
-var name = 'themost_xml';
+const nodeResolve = require('@rollup/plugin-node-resolve');
+// eslint-disable-next-line
+const commonjs = require('@rollup/plugin-commonjs');
+// eslint-disable-next-line
+const { dts } = require('rollup-plugin-dts');
 
 module.exports = [{
     input: './src/index.js',
     output: [
         {
-            file: dist + name + '.cjs.js',
+            file: './dist/index.cjs.js',
             format: 'cjs'
         },
         {
-            file: dist + name + '.esm.js',
+            file: './dist/index.esm.js',
             format: 'esm'
         },
         {
             name: '@themost/xml',
-            file: dist + name + '.js',
+            file: './dist/index.js',
             format: 'umd'
         }
     ],
     plugins: [
-        rollupResolve(),
-        rollupCommon(),
-        autoExternal()
+        nodeResolve(),
+        commonjs({
+            esmExternals: true
+        }),
     ]
 }, {
     input: './src/index.d.ts',
-    output: [ { file: dist + name + '.d.ts', format: 'es' } ],
+    output: [ { file: './dist/index.d.ts', format: 'es' } ],
     plugins: [
         dts()
     ],
