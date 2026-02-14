@@ -1,6 +1,6 @@
 {
   "name": "@themost/xml",
-  "version": "2.5.2",
+  "version": "2.7.0",
   "description": "MOST Web Framework XML and XSLT library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
